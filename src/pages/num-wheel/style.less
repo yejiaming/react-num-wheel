@@ -1,0 +1,89 @@
+#app {
+  text-align: center;
+}
+
+button {
+  width: 80%;
+  border: 1px solid;
+  line-height: 80px;
+  border-radius: 5px;
+  margin: 20px 0;
+}
+
+@gray: #A3A4A6;
+@red: #F25643;
+@blue: #3296FA;
+@orange: #FF943E;
+@title: #191F25;
+@green: #15BC83;
+@lineLeve2: #F6F6F6;
+@lineLeve1: #EDEDED;
+// sheet组件
+.m-sheet {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  font-size: 16px;
+  -webkit-user-select: none;
+  overflow: hidden;
+  backface-visibility: hidden;
+  transition: .2s;
+  text-align: center;
+  .gou {
+    color: #fff;
+    font-size: 100px;
+  }
+  .m-content {
+    background: #fff;
+    color: @blue;
+    max-height: 484px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; // 让IOS滚动流畅
+    .sheet {
+      font-size: 34px;
+      padding: 24px 0;
+      .setBottomLine(@lineLeve1);
+      &.cancel-sheet {
+        color: @gray;
+      }
+    }
+  }
+}
+
+// 1px bottom
+.setBottomLine(@c: #C7C7C7) {
+  position: relative;
+  &::after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    box-sizing: border-box;
+    border-bottom: 1px solid @c;
+    color: @c;
+    transform-origin: 0 100%;
+    transform: scaleY(0.5);
+  }
+}
+
+input {
+  border: 1px solid;
+  border-radius: 2px;
+  line-height: 52px;
+  width: 60%;
+}
+
+.reset-confirm {
+  .m-cancel-btn {
+    color: #A3A4A6;
+  }
+  .m-msgbox-title {
+    font-size: 50px;
+  }
+  .m-msgbox-message {
+    color: red;
+  }
+}
